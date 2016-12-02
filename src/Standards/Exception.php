@@ -25,11 +25,11 @@ class Exception extends \Exception implements ExceptionInterface
     {
         parent::__construct($message);
 
-        if (! is_null($statusCode)) {
+        if (!is_null($statusCode)) {
             $this->setStatusCode($statusCode);
         }
 
-        if (! is_null($errorCode)) {
+        if (!is_null($errorCode)) {
             $this->setErrorCode($errorCode);
         }
     }
