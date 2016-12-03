@@ -9,13 +9,15 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\Exceptions\Runtime\Http;
 
 use BrianFaust\Exceptions\Standards\RuntimeException;
 
 class PreconditionFailedException extends RuntimeException
 {
-    public function __construct($message = null, $errorCode = 'ERR-PRECONDITION-FAILED')
+    public function __construct(?string $message, ?string $errorCode = 'ERR-PRECONDITION-FAILED'): void
     {
         parent::__construct($message, $errorCode, 412);
     }

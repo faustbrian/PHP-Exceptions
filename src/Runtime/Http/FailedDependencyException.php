@@ -9,13 +9,15 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\Exceptions\Runtime\Http;
 
 use BrianFaust\Exceptions\Standards\RuntimeException;
 
 class FailedDependencyException extends RuntimeException
 {
-    public function __construct($message = null, $errorCode = 'ERR-FAILED-DEPENDENCY')
+    public function __construct(?string $message, ?string $errorCode = 'ERR-FAILED-DEPENDENCY'): void
     {
         parent::__construct($message, $errorCode, 424);
     }

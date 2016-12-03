@@ -9,13 +9,15 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\Exceptions\Standards\Logic;
 
 use BrianFaust\Exceptions\Standards\LogicException;
 
 class BadMethodCallException extends LogicException
 {
-    public function __construct($message = null, $errorCode = 'ERR-BAD-METHOD-CALL', $statusCode = null)
+    public function __construct(?string $message, ?string $errorCode = 'ERR-BAD-METHOD-CALL', ?int $statusCode): void
     {
         parent::__construct($message, $errorCode, $statusCode);
     }

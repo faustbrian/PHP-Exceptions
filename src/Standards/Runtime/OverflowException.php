@@ -9,13 +9,15 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\Exceptions\Standards\Runtime;
 
 use BrianFaust\Exceptions\Standards\RuntimeException;
 
 class OverflowException extends RuntimeException
 {
-    public function __construct($message = null, $errorCode = 'ERR-OVERFLOW', $statusCode = null)
+    public function __construct(?string $message, ?string $errorCode = 'ERR-OVERFLOW', ?int $statusCode): void
     {
         parent::__construct($message, $errorCode, $statusCode);
     }

@@ -9,11 +9,13 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\Exceptions\Standards;
 
 class LogicException extends Exception
 {
-    public function __construct($message = null, $errorCode = 'ERR-LOGIC', $statusCode = null)
+    public function __construct(?string $message, ?string $errorCode = 'ERR-LOGIC', ?int $statusCode): void
     {
         parent::__construct($message, $errorCode, $statusCode);
     }

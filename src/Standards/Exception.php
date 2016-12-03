@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\Exceptions\Standards;
 
 use BrianFaust\Exceptions\Contracts\ExceptionInterface;
@@ -21,7 +23,7 @@ class Exception extends \Exception implements ExceptionInterface
 
     protected $headers;
 
-    public function __construct($message = 'An error occured.', $errorCode = null, $statusCode = null)
+    public function __construct(string $message = 'An error occured.', ?string $errorCode = null, ?int $statusCode): void
     {
         parent::__construct($message);
 
@@ -34,22 +36,22 @@ class Exception extends \Exception implements ExceptionInterface
         }
     }
 
-    public function setErrorCode($errorCode)
+    public function setErrorCode($errorCode): void
     {
         $this->errorCode = $errorCode;
     }
 
-    public function getErrorCode()
+    public function getErrorCode(): int
     {
         return $this->errorCode;
     }
 
-    public function setStatusCode($statusCode)
+    public function setStatusCode($statusCode): void
     {
         $this->statusCode = $statusCode;
     }
 
-    public function getStatusCode()
+    public function getStatusCode(): string
     {
         return $this->statusCode;
     }

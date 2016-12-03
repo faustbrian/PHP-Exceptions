@@ -9,13 +9,15 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\Exceptions\Runtime;
 
 use BrianFaust\Exceptions\Standards\Runtime\UnexpectedValueException;
 
 class NullValueException extends UnexpectedValueException
 {
-    public function __construct($message = null, $errorCode = 'ERR-NULL-VALUE', $statusCode = null)
+    public function __construct(?string $message, ?string $errorCode = 'ERR-NULL-VALUE', ?int $statusCode): void
     {
         parent::__construct($message, $errorCode, $statusCode);
     }
