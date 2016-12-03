@@ -23,7 +23,7 @@ class Exception extends \Exception implements ExceptionInterface
 
     protected $headers;
 
-    public function __construct(string $message = 'An error occured.', ?string $errorCode = null, ?int $statusCode): void
+    public function __construct(?string $message = 'An error occured.', ?string $errorCode = null, ?int $statusCode): void
     {
         parent::__construct($message);
 
