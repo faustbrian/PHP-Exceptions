@@ -28,7 +28,7 @@ interface ExceptionInterface
 
     public function setErrorCode($errorCode): void;
 
-    public function getStatusCode():int;
+    public function getStatusCode(): int;
 
     public function setStatusCode($statusCode): void;
 }
