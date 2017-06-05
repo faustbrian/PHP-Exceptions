@@ -1,11 +1,5 @@
 <?php
 
-
-
-declare(strict_types=1);
-
-
-
 namespace BrianFaust\Exceptions\Standards;
 
 use BrianFaust\Exceptions\Contracts\ExceptionInterface;
@@ -18,7 +12,7 @@ class Exception extends \Exception implements ExceptionInterface
 
     protected $headers;
 
-    public function __construct(?string $message, ?string $errorCode = null, ?int $statusCode): void
+    public function __construct(?string $message, ?string $errorCode = null, ?int $statusCode)
     {
         parent::__construct($message);
 
@@ -31,7 +25,7 @@ class Exception extends \Exception implements ExceptionInterface
         }
     }
 
-    public function setErrorCode($errorCode): void
+    public function setErrorCode($errorCode)
     {
         $this->errorCode = $errorCode;
     }
@@ -41,7 +35,7 @@ class Exception extends \Exception implements ExceptionInterface
         return $this->errorCode;
     }
 
-    public function setStatusCode($statusCode): void
+    public function setStatusCode($statusCode)
     {
         $this->statusCode = $statusCode;
     }

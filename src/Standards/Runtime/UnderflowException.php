@@ -1,18 +1,12 @@
 <?php
 
-
-
-declare(strict_types=1);
-
-
-
 namespace BrianFaust\Exceptions\Standards\Runtime;
 
 use BrianFaust\Exceptions\Standards\RuntimeException;
 
 class UnderflowException extends RuntimeException
 {
-    public function __construct(?string $message, ?string $errorCode, ?int $statusCode): void
+    public function __construct(?string $message, ?string $errorCode, ?int $statusCode)
     {
         parent::__construct($message, $errorCode, $statusCode);
     }

@@ -1,16 +1,10 @@
 <?php
 
-
-
-declare(strict_types=1);
-
-
-
 namespace BrianFaust\Exceptions\Runtime\Http;
 
 class UpdateResourceFailedException extends UnprocessableEntityException
 {
-    public function __construct(?string $message, ?string $errorCode = 'ERR-UPDATE-RESOURCE-FAILED'): void
+    public function __construct(?string $message, ?string $errorCode = 'ERR-UPDATE-RESOURCE-FAILED')
     {
         parent::__construct($message, $errorCode, 422);
     }
